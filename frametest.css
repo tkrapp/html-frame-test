@@ -1,0 +1,128 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #e7e7e7;
+    font-family: 'Droid-sans', 'sans-serif';
+}
+
+.app-header {
+    height: 5rem;
+    background: white;
+    border-bottom: 1px solid #cccccc;
+    box-sizing: border-box;
+    position: sticky;
+    top: -2.8rem;
+    left: 1rem;
+    z-index: 3;
+    box-shadow: 0 0 2px black;
+}
+
+.app-header-claim {
+    height: 3rem;
+    background: #e20074;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    line-height: 3rem;
+    margin: 0;
+}
+
+.app-header-menu {
+    display: block;
+    box-sizing: border-box;
+    height: 2rem;
+    line-height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.app-side-nav {
+    /* background: #383838; */
+    width: 10rem;
+    height: calc(100vh - 5rem);
+    color: white;
+    transition: width 0.5s;
+    overflow-x: hidden;
+    position: sticky;
+    top: 2.3rem;
+    left: 0;
+    z-index: 2;
+    float: left;
+}
+
+.app-side-nav ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.app-side-nav.side-nav-collapsed  {
+    width: 2rem;
+    z-index: 2;
+}
+
+.app-content {
+    padding-left: 10rem;
+    padding-top: 0.1px;
+    padding-bottom: 0.1px;
+    position: relative;
+    transition: padding-left 0.5s,
+                box-shadow 0.5s;
+    z-index: 1;
+    /* white-space: nowrap; */
+}
+
+.app-content:before {
+    content: "";
+    display: block;
+    width: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: calc(100vh - 5rem);
+    height: 100%;
+    background: #383838;
+    transition: width 0.5s,
+                box-shadow 0.5s;
+    box-shadow: 0 0 2px #383838;
+}
+
+.app-side-nav.side-nav-collapsed ~ .app-content {
+    padding-left: 2rem;
+    box-shadow: -2px 0 2px red;
+}
+
+.app-side-nav.side-nav-collapsed ~ .app-content:before {
+    width: 2rem;
+    box-shadow: 0 0 0 #383838;
+}
+
+.global-side-nav {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    min-height: 5rem;
+    z-index: 2;
+    /* background: #383838; */
+    color: white;
+    width: 10rem;
+    overflow-x: hidden;
+    transition: width 0.5s;
+    white-space: nowrap;
+    float: left;
+}
+
+.app-side-nav.side-nav-collapsed ~ .global-side-nav {
+    width: 2rem;
+}
+
+.app-content > div {
+    max-width: 60rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    box-shadow: 1px 1px 2px #aaaaaa;
+}
